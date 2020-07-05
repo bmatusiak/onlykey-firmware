@@ -13,7 +13,7 @@ before_install:
 
 script:
 - bash ./.travis-build.sh 9 #grab master
-- bash ./.travis-build.sh
+- bash ./.travis-build.sh   #make local build
 #- bash  ./.travis-build.sh 2
 
 before_deploy:
