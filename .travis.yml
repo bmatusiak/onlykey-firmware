@@ -6,6 +6,11 @@ services:
 - docker
 
 before_install:
+# Set up git user name and tag this commit
+- git config --local user.name "bmatusiak"
+- git config --local user.email "bmatusiak@gmail.com"
+- export A_TRAVIS_TAG=${TRAVIS_TAG:-$(git rev-parse --verify HEAD | cut -c1-7)}
+- echo $A_TRAVIS_TAG
 - bash ./.travis-build.sh 1
 
 script:
