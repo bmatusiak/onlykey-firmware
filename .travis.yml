@@ -20,3 +20,5 @@ deploy:
   skip_cleanup: true
   tag_name: "pre_release"
   prerelease: true
+  on:
+    branch: build
