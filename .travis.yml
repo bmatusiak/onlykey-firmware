@@ -6,7 +6,7 @@ services:
 - docker
 
 before_install:
-- echo $(echo $TRAVIS_PULL_REQUEST_SHA | cut -c1-7) 
+- echo $TRAVIS_PULL_REQUEST_SHA
 - bash ./.travis-build.sh 1
 
 script:
