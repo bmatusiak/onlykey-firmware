@@ -1,7 +1,7 @@
 #!/bin/bash 
 
 if [ "${TRAVIS_PULL_REQUEST_SHA}" == "" ] ; then
-    exit 1
+    exit 0
 fi
 
 if [ "${1}" == "1" ] ; then
