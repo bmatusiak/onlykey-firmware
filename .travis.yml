@@ -6,7 +6,7 @@ services:
 - docker
 
 before_install:
-- export TRAVIS_PULL_REQUEST_SHA=${TRAVIS_PULL_REQUEST_SHA}
+- export TRAVIS_PULL_REQUEST_SHA=$(foo=$(env | grep TRAVIS_PULL_REQUEST_SHA) && echo ${foo##*=} | cut -c1-7)
 - echo $TRAVIS_PULL_REQUEST_SHA
 - bash ./.travis-build.sh 1
 
