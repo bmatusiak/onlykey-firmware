@@ -10,12 +10,4 @@ before_install:
 
 script:
 - bash ./.travis-build.sh
-
-jobs:
-  include:
-    - stage: build
-      script: 
-      - ./.travis-build.sh
-    - stage: export
-      script: 
-      - ./.travis-build.sh 2
+- bash  ./.travis-build.sh 2
