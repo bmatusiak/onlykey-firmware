@@ -17,7 +17,7 @@ before_deploy:
 # Set up git user name and tag this commit
 - git config --local user.name "bmatusiak"
 - git config --local user.email "bmatusiak@gmail.com"
-- export TRAVIS_TAG=${TRAVIS_TAG:-$(./.travis-build.sh 3)}
+- export TRAVIS_TAG=${TRAVIS_TAG:-$($TRAVIS_PULL_REQUEST_SHA | cut -c1-7)}
 - echo $TRAVIS_TAG
 - git tag $TRAVIS_TAG
   
