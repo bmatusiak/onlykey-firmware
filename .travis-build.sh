@@ -44,5 +44,5 @@ elif [ "${1}" == "9" ] ; then
 elif [ "${1}" == "" ] ; then
     echo "BUILD"
     cd ./builder
-    make docker-build
+    make docker-build-local
 fi

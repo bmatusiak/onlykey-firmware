@@ -6,13 +6,13 @@ services:
 - docker
 
 before_install: 
-- bash ./.travis-build.sh 0
-- bash ./.travis-build.sh 1
+- bash ./.travis-build.sh 0 # check if pr
+- bash ./.travis-build.sh 1 # install build env
 #- bash ./.travis-build.sh 1
 
 
 script:
-- bash ./.travis-build.sh 9
+- bash ./.travis-build.sh 9 #grab master
 - bash ./.travis-build.sh
 #- bash  ./.travis-build.sh 2
 
