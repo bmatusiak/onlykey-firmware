@@ -2,5 +2,11 @@ language: ruby
 os: linux
 dist: xenial
 
+services:
+  - docker
+  
+before_install:
+- bash ./.travis-build.sh 1
+
 script:
-- bash ./.build-travis.sh
+- bash ./.travis-build.sh
