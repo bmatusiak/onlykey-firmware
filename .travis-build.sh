@@ -35,7 +35,7 @@ elif [ "${1}" == "3" ] ; then
     else
         echo "ERROR"
     fi
-else
+elif [ "${1}" == "" ] ; then
     echo "BUILD"
     cd ./builder
     make docker-build
