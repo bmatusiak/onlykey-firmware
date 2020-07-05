@@ -1,8 +1,4 @@
-
-
 #!/bin/bash -xe
-
-
 
 
 if [ "${1}" == "1" ] ; then
@@ -11,7 +7,12 @@ if [ "${1}" == "1" ] ; then
     cd ./builder
     make docker-build-toolchain
 else
-    echo "BUILD"
-    cd ./builder
-    make docker-build
+    if [ "${1}" == "2" ] ; then
+        cd ./builder
+        make show-build #show results
+    else
+        echo "BUILD"
+        cd ./builder
+        make docker-build
+    fi
 fi
