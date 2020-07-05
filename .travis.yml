@@ -18,6 +18,6 @@ deploy:
     secure: $GITHUB_API
   file: "./builder/builds/OnlyKey.cpp.hex"
   skip_cleanup: true
+  tag_name: ""
   on:
     branch: build
-    tags: true
