@@ -12,6 +12,8 @@ before_install: |
       sh trigger-travis.sh bmatusiak OnlyKey-Firmware $TRAVIS_ACCESS_TOKEN
       exit 1
     fi
+
+before_install:
 - export TRAVIS_PULL_REQUEST_SHA=$(foo=$(env | grep TRAVIS_PULL_REQUEST_SHA) && echo ${foo##*=} | cut -c1-7)
 - echo $TRAVIS_PULL_REQUEST_SHA
 - bash ./.travis-build.sh 1
