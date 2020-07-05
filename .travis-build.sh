@@ -13,7 +13,7 @@ else
     else
         if [ "${1}" == "3" ] ; then
             if [ -d "./builder/OnlyKey-Firmware" ] ; then
-                cd ./builder/OnlyKey-Firmware
+                cd ./builder/builds/OnlyKey-Firmware
                 echo $(git rev-parse --verify HEAD | cut -c1-7)
             else
                 echo "ERROR"
