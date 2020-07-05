@@ -1,8 +1,23 @@
 #!/bin/bash 
 
-if [ "${TRAVIS_PULL_REQUEST_SHA}" == "" ] ; then
-    exit 0
+
+if [ "${1}" == "0" ] ; then
+
+echo "TRAVIS_BRANCH=$TRAVIS_BRANCH TRAVIS_PULL_REQUEST=$TRAVIS_PULL_REQUEST"
+if [[ ($TRAVIS_PULL_REQUEST == true) ]] ; then
+  curl -LO --retry 3 https://raw.github.com/mernst/plume-lib/master/bin/trigger-travis.sh
+  sh trigger-travis.sh bmatusiak OnlyKey-Firmware $TRAVIS_ACCESS_TOKEN
+  exit 0
 fi
+
+fi
+
+
+
+# if [ "${TRAVIS_PULL_REQUEST_SHA}" == "" ] ; then
+#     exit 0
+# fi
+
 
 if [ "${1}" == "1" ] ; then
     echo "BUILD TOOLS"
