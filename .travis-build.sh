@@ -1,4 +1,4 @@
-#!/bin/bash -xe
+#!/bin/bash 
 
 
 if [ "${1}" == "1" ] ; then
@@ -12,8 +12,12 @@ else
         make show-build #show results
     else
         if [ "${1}" == "3" ] ; then
-            cd ./builder/OnlyKey-Firmware
-            echo $(git rev-parse --verify HEAD | cut -c1-7)
+            if [ -d "./builder/OnlyKey-Firmware" ] ; then
+                cd ./builder/OnlyKey-Firmware
+                echo $(git rev-parse --verify HEAD | cut -c1-7)
+            else
+                echo "ERROR"
+            fi
         else
             echo "BUILD"
             cd ./builder
