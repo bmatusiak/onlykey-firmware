@@ -39,9 +39,9 @@ elif [ "${1}" == "3" ] ; then
 elif [ "${1}" == "9" ] ; then
     
     cd ./builder/OnlyKey-Firmware
-    buildid=$(git rev-parse --verify HEAD)
+    buildid=$(git rev-parse --verify HEAD | cut -c1-7)
     cd ../libraries
-    echo $buildid-$(git rev-parse --verify HEAD)
+    echo $buildid-$(git rev-parse --verify HEAD | cut -c1-7)
     
 elif [ "${1}" == "" ] ; then
     echo "BUILD"
