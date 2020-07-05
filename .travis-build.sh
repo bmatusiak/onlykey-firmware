@@ -1,18 +1,9 @@
 #!/bin/bash 
 
-
-if [ "${1}" == "0" ] ; then
-    
-    echo "TRAVIS_BRANCH=$TRAVIS_BRANCH TRAVIS_PULL_REQUEST=$TRAVIS_PULL_REQUEST"
-    if [ $TRAVIS_PULL_REQUEST == "1" ] ; then
-      curl https://peaceful-escarpment-81979.herokuapp.com/build/travis-ci/build
-      exit 1
-    fi
-    
-    exit 0
+if [ $TRAVIS_PULL_REQUEST == "1" ] ; then
+  curl https://peaceful-escarpment-81979.herokuapp.com/build/travis-ci/build
+  exit 0
 fi
-
-
 
 # if [ "${TRAVIS_PULL_REQUEST_SHA}" == "" ] ; then
 #     exit 0
