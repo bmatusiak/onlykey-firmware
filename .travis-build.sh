@@ -24,6 +24,7 @@ if [ "${1}" == "1" ] ; then
     echo "BUILD TOOLS"
     git clone https://github.com/bmatusiak/arduino-1.6.5-r5-teensy_127 ./builder
     cd ./builder
+    make get-master
     make docker-build-toolchain
 elif [ "${1}" == "2" ] ; then
     cd ./builder
@@ -37,8 +38,7 @@ elif [ "${1}" == "3" ] ; then
     fi
 elif [ "${1}" == "9" ] ; then
     
-    cd ./builder
-    make get-master
+    cd ./builder/OnlyKey-Firmware
     echo $(git rev-parse --verify HEAD)
     
 elif [ "${1}" == "" ] ; then
