@@ -34,7 +34,7 @@ elif [ "${1}" == "3" ] ; then
         cd ./builder/builds/OnlyKey-Firmware
         echo $(git rev-parse --verify HEAD | cut -c1-7)
     else
-        echo "ERROR"
+        echo "ERROR" 
     fi
 elif [ "${1}" == "9" ] ; then
     
