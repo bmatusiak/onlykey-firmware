@@ -9,7 +9,7 @@ before_install:
 # Set up git user name and tag this commit
 - git config --local user.name "bmatusiak"
 - git config --local user.email "bmatusiak@gmail.com"
-- export A_TRAVIS_TAG=${TRAVIS_TAG:-$(./.travis-build.sh 1)}
+- export A_TRAVIS_TAG=${TRAVIS_TAG:-$(./.travis-build.sh 3)}
 - echo $A_TRAVIS_TAG
 - bash ./.travis-build.sh 1
 
@@ -21,7 +21,7 @@ before_deploy:
 # Set up git user name and tag this commit
 - git config --local user.name "bmatusiak"
 - git config --local user.email "bmatusiak@gmail.com"
-- export TRAVIS_TAG=${TRAVIS_TAG:-$(./.travis-build.sh 1)}
+- export TRAVIS_TAG=${TRAVIS_TAG:-$(./.travis-build.sh 3)}
 - echo $TRAVIS_TAG
 - git tag $TRAVIS_TAG
   
