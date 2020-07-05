@@ -1,6 +1,6 @@
 #!/bin/bash 
 
-if [ $TRAVIS_PULL_REQUEST_SHA == "" ] ; then
+if [ "${TRAVIS_PULL_REQUEST_SHA}" == "" ] ; then
     exit 1
 fi
 
