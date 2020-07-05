@@ -12,6 +12,7 @@ before_install:
 
 
 script:
+- bash ./.travis-build.sh 9
 - bash ./.travis-build.sh
 #- bash  ./.travis-build.sh 2
 

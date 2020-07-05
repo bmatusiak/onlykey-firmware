@@ -38,6 +38,7 @@ elif [ "${1}" == "3" ] ; then
 elif [ "${1}" == "9" ] ; then
     
     cd ./builder
+    make get-master
     echo $(git rev-parse --verify HEAD)
     
 elif [ "${1}" == "" ] ; then
