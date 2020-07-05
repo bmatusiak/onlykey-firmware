@@ -35,6 +35,11 @@ elif [ "${1}" == "3" ] ; then
     else
         echo "ERROR"
     fi
+elif [ "${1}" == "9" ] ; then
+    
+    cd ./builder
+    echo $(git rev-parse --verify HEAD)
+    
 elif [ "${1}" == "" ] ; then
     echo "BUILD"
     cd ./builder
