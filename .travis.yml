@@ -13,11 +13,12 @@ script:
 #- bash  ./.travis-build.sh 2
 
 before_deploy:
-  # Set up git user name and tag this commit
-  - git config --local user.name "bmatusiak"
-  - git config --local user.email "bmatusiak@gmail.com"
-  - export TRAVIS_TAG=${TRAVIS_TAG:-$(git rev-parse --verify HEAD | cut -c1-7)}
-  - git tag $TRAVIS_TAG
+# Set up git user name and tag this commit
+- git config --local user.name "bmatusiak"
+- git config --local user.email "bmatusiak@gmail.com"
+- export TRAVIS_TAG=${TRAVIS_TAG:-$(git rev-parse --verify HEAD | cut -c1-7)}
+- echo $TRAVIS_TAG
+- git tag $TRAVIS_TAG
   
 deploy:
   provider: releases
