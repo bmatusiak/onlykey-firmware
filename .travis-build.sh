@@ -11,8 +11,13 @@ else
         cd ./builder
         make show-build #show results
     else
-        echo "BUILD"
-        cd ./builder
-        make docker-build
+        if [ "${1}" == "3" ] ; then
+            cd ./builder/OnlyKey-Firmware
+            echo $(git rev-parse --verify HEAD | cut -c1-7)
+        else
+            echo "BUILD"
+            cd ./builder
+            make docker-build
+        fi
     fi
 fi

@@ -12,13 +12,20 @@ script:
 - bash ./.travis-build.sh
 #- bash  ./.travis-build.sh 2
 
+before_deploy:
+  # Set up git user name and tag this commit
+  - git config --local user.name "bmatusiak"
+  - git config --local user.email "bmatusiak@gmail.com"
+  - export TRAVIS_TAG=${TRAVIS_TAG:-$(git rev-parse --verify HEAD | cut -c1-7)}
+  - git tag $TRAVIS_TAG
+  
 deploy:
   provider: releases
   api_key:
     secure: XwgX6+fNhN9l1FM/tkiStw8ShJh9fw1uP4+/v89OJOjGibsnxIIT69p0HopWhtOmldR/7rciMZgFGQubBrhiMPSYIS9JeO6rL9L80ynlIspm+b5sCiKpNYAC8j8ys+KfxXp95bYE726q3XCiurtkTq8IzTACV5X6KhTx2dk0MgI62KxdXMD0+YqKe4AYfImmaeKVPef5BaVCkg532/B614MSSxdaUNLWdA+fKvy55SJkT3pN2vPL8mStn4Lf07xiarVKt3Qe4zESTbP7PrmvwSPrpyruv34C5LMyq7tBGYx7r4jR1is8rfVFWEzGl1ETfjI2XsiSfKejK4QLN3jn/DuN2uOw2s8y/jeq2lwtUB4Enj1eX9iqYCUtnR47WrM6JiaJRCUXi/AnUfH6T6dtC6qneMM6g0HMYUQsu+ZBNf0/nh84htVoxZBMKUJu5wWnJzlUaFmJZrPoT93WGQ2V0eyZ4+pEdoYAY+hid2d1JaXq1xlP9/bguOufgE5u/d6z07hlrun9cWd/8xmNAnPbhvymtSHZhZKuf4mXfs/JgkjUhl14J4Eo7cHIjbmYNglxG7iVPW1lPkLm0EEdipwIAV6ffR1dam9MLpnOhh6N4K1gA8vVebPj+CM0HZtTlT8Oztyg01YYWKlTi0PLnkhYNUV1ttC5vuekFUK1zP5b8xI=
   file: "./builder/builds/OnlyKey.cpp.hex"
   skip_cleanup: true
-  tag_name: "pre_release"
+  tag_name: "build"
   prerelease: true
   on:
     branch: build
