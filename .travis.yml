@@ -31,6 +31,7 @@ deploy:
   file: "./builder/builds/OnlyKey.cpp.hex"
   skip_cleanup: true
   prerelease: true
+  overwrite: true
   on:
     branch: build
     
