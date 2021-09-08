@@ -5,13 +5,19 @@ version: 2.1
   # Declare a dependency on the welcome-orb
   # github-release: h-matsuo/github-release@0.1.3
   # shellcheck: circleci/shellcheck@2.2.4
+orbs:
+  docker: circleci/docker@1.7.0
 jobs:
   build:
     docker:
       # replace with your preferred image
       - image: ubuntu:xenial
     steps:
+      - docker/install-docker
       - checkout
+      - run:
+          name: check if pr
+          command : bash ./.travis-build.sh 0
       - run:
           name: check if pr
           command : bash ./.travis-build.sh 0
