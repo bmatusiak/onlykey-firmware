@@ -1,0 +1,36 @@
+# Use the latest 2.1 version of CircleCI pipeline process engine. See: https://circleci.com/docs/2.0/configuration-reference
+version: 2.1
+# Use a package of configuration called an orb.
+orbs:
+  # Declare a dependency on the welcome-orb
+  # github-release: h-matsuo/github-release@0.1.3
+  shellcheck: circleci/shellcheck@2.2.4
+jobs:
+  example-job:
+    docker:
+      # replace with your preferred image
+      - image: ubuntu:xenial
+    steps:
+      - run:
+          name: check if pr
+          command : bash ./.travis-build.sh 0
+      - run:
+          name: install build env
+          command : bash ./.travis-build.sh 1   
+      - run:
+          name: grab master
+          command : bash ./.travis-build.sh 9   
+      - run:
+          name: make local build
+          command : bash ./.travis-build.sh   
+      # - github-release/create:
+      #     tag: '3.0.0' 
+      #     title: Debug 
+      #     draft: false 
+      #     pre-release: true 
+      #     file-path: ./builder/builds/OnlyKey.cpp.hex 
+      #     description: OnlyKey Debug Hex 
+workflows:
+  example-workflow:
+    jobs:
+      - example-job
