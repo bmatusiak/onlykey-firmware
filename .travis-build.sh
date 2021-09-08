@@ -1,18 +1,18 @@
 #!/bin/bash 
 
 
-if [ "${1}" == "0" ] ; then
+# if [ "${1}" == "0" ] ; then
     
-    echo "TRAVIS_BRANCH=$TRAVIS_BRANCH TRAVIS_PULL_REQUEST=$TRAVIS_PULL_REQUEST"
-    if [ $TRAVIS_PULL_REQUEST == "1" ] ; then
-      curl https://peaceful-escarpment-81979.herokuapp.com/build/travis-ci/build
-    fi
+#     echo "TRAVIS_BRANCH=$TRAVIS_BRANCH TRAVIS_PULL_REQUEST=$TRAVIS_PULL_REQUEST"
+#     if [ $TRAVIS_PULL_REQUEST == "1" ] ; then
+#       curl https://peaceful-escarpment-81979.herokuapp.com/build/travis-ci/build
+#     fi
     
-fi
+# fi
 
-if [ $TRAVIS_PULL_REQUEST == "1" ] ; then
-  exit 0
-fi
+# if [ $TRAVIS_PULL_REQUEST == "1" ] ; then
+#   exit 0
+# fi
 
 
 # if [ "${TRAVIS_PULL_REQUEST_SHA}" == "" ] ; then
