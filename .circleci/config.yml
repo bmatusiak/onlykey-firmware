@@ -7,7 +7,7 @@ version: 2.1
   # shellcheck: circleci/shellcheck@2.2.4
 orbs:
   docker: circleci/docker@1.7.0
-  git: compute/git@0.0.9
+  # git: compute/git@0.0.9
 jobs:
   build:
     docker:
@@ -15,9 +15,9 @@ jobs:
       - image: cimg/base:stable
     steps:
       - docker/install-docker
-      - git/configure:
-          user-email: bmatusiaik@gmail.com 
-          user-name: Bradley Matusiak 
+      # - git/configure:
+      #     user-email: bmatusiaik@gmail.com 
+      #     user-name: Bradley Matusiak 
       - checkout
       - run:
           name: check if pr
