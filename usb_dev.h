@@ -1,5 +1,5 @@
 /* Modifications
- * Copyright (c) 2015-2019, CryptoTrust LLC.
+ * Copyright (c) 2015-2020, CryptoTrust LLC.
  * All rights reserved.
  * 
  * Author : Tim Steiner <t@crp.to>
@@ -126,6 +126,9 @@ extern "C" {
 extern uint8_t setBuffer[9];
 extern uint8_t getBuffer[9];
 extern uint8_t keyboard_buffer[80];
+extern uint8_t sess_counter;
+extern uint8_t may_block;
+
 
 extern void wipe_usb_buffer();
 void usb_init(void);
@@ -178,10 +181,6 @@ extern void usb_midi_flush_output(void);
 #ifdef FLIGHTSIM_INTERFACE
 extern void usb_flightsim_flush_callback(void);
 #endif
-
-
-
-
 
 #ifdef __cplusplus
 }

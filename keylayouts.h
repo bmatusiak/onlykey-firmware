@@ -1,5 +1,5 @@
 /* Modifications
- * Copyright (c) 2015-2019, CryptoTrust LLC.
+ * Copyright (c) 2015-2020, CryptoTrust LLC.
  * All rights reserved.
  * 
  * Author : Tim Steiner <t@crp.to>
@@ -142,6 +142,8 @@ extern "C"{
 #define LAYOUT_CZECH	0x18
 #define LAYOUT_SERBIAN_LATIN_ONLY	0x19
 #define LAYOUT_HUNGARIAN    0x1A
+#define LAYOUT_DANISH_MAC    0x1B
+#define LAYOUT_DVORAK    0x1C
 
 
 // http://en.wikipedia.org/wiki/Keyboard_layout

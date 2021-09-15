@@ -1,5 +1,5 @@
 /* Modifications
- * Copyright (c) 2015-2019, CryptoTrust LLC.
+ * Copyright (c) 2015-2020, CryptoTrust LLC.
  * All rights reserved.
  * 
  * Author : Tim Steiner <t@crp.to>
@@ -471,6 +471,11 @@ static void usb_keyboard_press_key(uint8_t key, uint8_t modifier)
 		if ((keyboard_modifier_keys & modifier) != modifier) {
 			keyboard_modifier_keys |= modifier;
 			send_required = 1;
+			usb_keyboard_send();
+			// SEND MODKEY MULTIPLE TIMES, FIXES RDP ISSUE 
+			usb_keyboard_send();
+			usb_keyboard_send();
+			usb_keyboard_send();
 			usb_keyboard_send();
 		}
 	}

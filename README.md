@@ -4,25 +4,17 @@ Source code reviewed by Codacy [![Codacy Badge](https://api.codacy.com/project/b
 
 This is the official firmware for **OnlyKey**
 
-OnlyKey can be purchased here: [OnlyKey order](http://www.crp.to/p/)
+OnlyKey can be purchased here: [OnlyKey order](https://onlykey.io)
 
-## Geting Started
+## Getting Started
 
 Just getting started with OnlyKey?
 
-[Start here](http://www.crp.to/okstart)
+[Start here](https://onlykey.io/start)
 
 ## About
 
 The firmware is the software that runs on the OnlyKey itself. In order to load firmware follow the instructions in the [User's Guide here](https://docs.crp.to/usersguide.html#loading-onlykey-firmware)
-
-There are two available editions of the OnlyKey firmware:
-
-**OnlyKey Standard Edition** The full featured OnlyKey firmware.
-
-**OnlyKey International Travel Edition** The encryption free OnlyKey firmware (ships globally).
-
-More information on the difference between the two editions is available [here](https://docs.crp.to/features.html#plausible-deniability-international-travel-edition-and-standard-edition-of-firmware)
 
 ## Development
 
@@ -30,7 +22,7 @@ OnlyKey firmware is open source and new features are added with each firmware re
 
 ## Support
 
-Check out the [OnlyKey Support Forum](https://groups.google.com/forum/#!forum/onlykey)
+Check out the [OnlyKey Support Forum](https://forum.onlykey.io)
 
 Check out the [OnlyKey Documentation](https://docs.crp.to)
 
